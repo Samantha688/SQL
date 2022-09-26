@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS exam (
+  student_id int(6) NOT NULL,
+  subject varchar(100) NOT NULL,
+  mark int(4) NOT NULL
+);
+
+
+INSERT INTO exam (student_id, subject, mark) VALUES
+(1, "history", 80),
+(2, "history", 75),
+(2, "math", 50),
+(3, "math", 64),
+(1, "english", 88),
+(2, "english", 72),
+(3, "english", 57);
+
+
+Write an SQL query to find the student(s) who has more than one subject with marks higher than the average mark of that subject among all students. 
+
+OR you can break it down into the following sub-questions: 
+1.  Find the average mark of each subject
+2.  Combine the exam table and the table made in 1
+3.  Find for each student, which subject whose mark is higher than average for that subject
+4.  Find the student(s) who has more than one subject with marks higher than the average mark of that subject among all students, showing only student id
+
+Result format:
++------+-------------+
+|      | student_id  |
+|------+-------------+
+|  1   |             |
+|  2   |             |            
++------+-------------+
+

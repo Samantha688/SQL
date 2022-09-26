@@ -1,0 +1,44 @@
+Answer: 
+
+SELECT e1.student_id FROM exam e1
+LEFT JOIN
+(SELECT subject, AVG(mark) AS average FROM exam GROUP BY subject) as e2
+ON e1.subject = e2.subject
+WHERE e1.mark > e2.average
+GROUP BY e1.student_id
+HAVING COUNT(*)>1;
+
+Result:
++------+-------------+
+|      | student_id  |
+|------+-------------+
+|  1   |      1      |
+|  2   |      2      |
++------+-------------+
+
+Answers to sub-questions: 
+1. 
+SELECT subject, AVG(mark) AS average FROM exam GROUP BY subject;
+
+2. 
+SELECT e1.student_id,e1.mark,e1.subject,e2.average FROM exam e1
+LEFT JOIN
+(SELECT subject, AVG(mark) AS average FROM exam GROUP BY subject) as e2
+ON e1.subject = e2.subject
+
+3. 
+SELECT e1.student_id,e1.mark,e1.subject,e2.average FROM exam e1
+LEFT JOIN
+(SELECT subject, AVG(mark) AS average FROM exam GROUP BY subject) as e2
+ON e1.subject = e2.subject
+WHERE e1.mark > e2.average
+
+
+4. 
+SELECT e1.student_id FROM exam e1
+LEFT JOIN
+(SELECT subject, AVG(mark) AS average FROM exam GROUP BY subject) as e2
+ON e1.subject = e2.subject
+WHERE e1.mark > e2.average
+GROUP BY e1.student_id
+HAVING COUNT(*)>1;
