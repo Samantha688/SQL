@@ -1,9 +1,10 @@
+#Copy and paste the following codes into SQLite to create the table
+
 CREATE TABLE IF NOT EXISTS exam (
   student_id int(6) NOT NULL,
   subject varchar(100) NOT NULL,
   mark int(4) NOT NULL
 );
-
 
 INSERT INTO exam (student_id, subject, mark) VALUES
 (1, "history", 80),
@@ -14,5 +15,8 @@ INSERT INTO exam (student_id, subject, mark) VALUES
 (2, "english", 72),
 (3, "english", 57);
 
+#Write a SQL query to find the number of student(s) who has more than one subject with marks higher than the average mark of that subject among all students
 
-SELECT * FROM exam;
+#You can break it down with the following sub-questions:
+  1. Find the 
+
