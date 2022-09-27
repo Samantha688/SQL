@@ -1,0 +1,39 @@
+CREATE TABLE IF NOT EXISTS developer (
+  developer_id int(6) NOT NULL,
+  developer_name varchar(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS sales (
+  sales_id  int(6) NOT NULL,
+  date DATE NOT NULL,
+  developer_id int(6) NOT NULL,
+  sales_price int(10) NOT NULL
+);
+
+INSERT INTO developer (developer_id, developer_name) VALUES 
+(1, "Kensington Development"),
+(2, "Pure Homes"),
+(3, "P&P"),
+(4, "Power Engineering"),
+(5, "Țara Constructions");
+
+INSERT INTO sales (sales_id, date, developer_id, sales_price) VALUES
+(1, "10/10/2020", 1, 365000),
+(2, "1/5/2021", 3, 756000),
+(3, "23/8/2021", 1, 1000000),
+(4, "7/1/2022", 2, 457560),
+(5, "16/3/2022", 2, 500500);
+
+Write an SQL query to show the developer names and their total sales. 
+HINT: you can calculate the total sales for each developer and show the column name as "total", as a middle step. 
+
+Result format:
++------+-----------------+---------+
+|      | developer_name  | total   |
+|------+-----------------+---------+
+|  1   |                 |         |
+|  2   |                 |         |
+|  3   |                 |         |
++------+-----------------+---------+
+
+
