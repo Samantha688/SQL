@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS weight (
   person_id int(6) NOT NULL, 
   gender varchar(100) NOT NULL,  
   age int(6) NOT NULL, 
-  weight decimal(3,2) NOT NULL
+  weight decimal(4,2) NOT NULL
 );
 
 INSERT INTO weight (person_id, gender, age, weight) VALUES 
